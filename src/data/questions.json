@@ -1,0 +1,20 @@
+﻿[
+  {
+    "id": 1,
+    "question": "What sound does a cat make?",
+    "options": ["Bhau-Bhau","Meow-Meow","Oink-Oink"],
+    "answerIndex": 1
+  },
+  {
+    "id": 2,
+    "question": "Which animal barks?",
+    "options": ["Cat","Dog","Cow"],
+    "answerIndex": 1
+  },
+  {
+    "id": 3,
+    "question": "Which tool bundles JS modules for the browser?",
+    "options": ["Vite","TensorFlow","jQuery"],
+    "answerIndex": 0
+  }
+]

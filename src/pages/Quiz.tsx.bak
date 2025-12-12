@@ -1,0 +1,114 @@
+﻿import CatPaw from "../components/CatPaw";
+import React, { useState, useMemo } from "react";
+import type { Answer } from "../App";
+
+type Q = { id: number; question: string; options: string[]; answer: number };
+
+type Props = {
+  questions: Q[];
+  answers: Answer[];
+  onAnswer: (qid: number, selectedIndex: number) => void;
+  onFinish: () => void;
+  onHome: () => void;
+};
+
+export default function Quiz({ questions, answers, onAnswer, onFinish, onHome }: Props) {
+  const total = questions.length;
+  const [index, setIndex] = useState(0);
+
+  const current = questions[index];
+  const selected = answers.find(a => a.qid === current.id)?.selected ?? null;
+
+  const progressPct = useMemo(() => Math.round(((index + 1) / total) * 100), [index, total]);
+
+  function choose(optIndex: number) {
+    onAnswer(current.id, optIndex);
+  }
+
+  function nextOrSubmit() {
+    if (index < total - 1) setIndex(i => i + 1);
+    else onFinish();
+  }
+
+  function prev() {
+    if (index > 0) setIndex(i => i - 1);
+  }
+
+  return (
+    <div className="quiz-screen">
+      <div className="card">
+        <header className="quiz-header">
+          <h2 className="title">Test Your Knowledge</h2>
+          <div className="progress-row">
+            <div className="progress-track">
+              <div className="progress-fill" style={{ width: `${progressPct}%` }} />
+            </div>
+            <div className="progress-count">{index + 1}/{total}</div>
+          </div>
+        </header>
+
+        <main className="quiz-main">
+          <div className="question-box">
+            <div className="question">{index + 1}. {current.question}</div>
+
+            <div className="options">
+              {current.options.map((opt, i) => (
+                <button
+                  key={i}
+                  onClick={() => choose(i)}
+                  className={`option ${selected === i ? "selected" : ""}`}
+                  aria-pressed={selected === i}
+                >
+                  {opt}
+                </button>
+              ))}
+            </div>
+          </div>
+        </main>
+
+        <footer className="quiz-footer">
+          <div className="left-controls">
+            <button className="btn ghost" onClick={onHome}>Home</button>
+          </div>
+
+          <div className="right-controls">
+            <button className="btn" onClick={prev} disabled={index === 0} aria-disabled={index === 0}>←</button>
+            <button
+              className="btn primary"
+              onClick={nextOrSubmit}
+              disabled={selected === null}
+              aria-disabled={selected === null}
+            >
+              {index === total - 1 ? "Finish" : "Next →"}
+            </button>
+          </div>
+        </footer>
+      </div> {/* end .card */}
+
+      {/* ---------------------------
+          Cat paw component (single instance)
+          - Option A (flexible): shows when question text contains "cat"
+          - Option B (strict): shows when question id equals the cat question id
+          Uncomment whichever you prefer and comment the other.
+         --------------------------- */}
+
+      {/* Option A: show when question text contains 'cat' (case-insensitive) */}
+      <CatPaw
+        visible={current.question.toLowerCase().includes("cat")}
+        message="Best of Luck!"
+        autoWave={true}
+      />
+
+      {/*
+      // Option B: show for a specific question id (more reliable)
+      // replace 1 with the id of your cat question
+      <CatPaw
+        visible={current.id === 1}
+        message="Best of Luck!"
+        autoWave={true}
+      />
+      */}
+
+    </div>
+  );
+}

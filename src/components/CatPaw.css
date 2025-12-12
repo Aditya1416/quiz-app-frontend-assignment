@@ -1,0 +1,9 @@
+﻿.catpaw-root { position: fixed; left: 28px; bottom: 20px; display:flex; flex-direction:column; align-items:center; z-index:9999; pointer-events:none; transform: translateY(8px); transition: transform 420ms cubic-bezier(.2,.9,.3,1), opacity 420ms; opacity:1;}
+.catpaw-bubble { background: linear-gradient(180deg,#ffffff,#fbffff); color:#0e3740; padding:10px 14px; border-radius:12px; border:1px solid rgba(15,107,122,0.06); font-weight:700; font-size:14px; box-shadow:0 10px 26px rgba(15,107,122,0.06); margin-bottom:-8px; pointer-events:none;}
+.catpaw-bubble::after { content:""; width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;border-top:9px solid #fff; position:relative; top:8px; left:18px; filter:drop-shadow(0 2px 2px rgba(0,0,0,0.03));}
+.catpaw-svg { display:block; transform-origin:50% 90%; user-select:none; will-change:transform;}
+@keyframes pawWaveKey { 0%{transform:rotate(0deg) translateY(0)} 18%{transform:rotate(-10deg) translateY(-6px)} 38%{transform:rotate(8deg) translateY(-3px)} 58%{transform:rotate(-6deg) translateY(-2px)} 78%{transform:rotate(4deg) translateY(-1px)} 100%{transform:rotate(0deg) translateY(0)}}
+@keyframes pawIdle { 0%{transform:translateY(0)} 50%{transform:translateY(-4px)} 100%{transform:translateY(0)}}
+.paw-wave { animation: pawWaveKey 1.2s cubic-bezier(.2,.9,.3,1) 1; }
+.catpaw-svg { animation: pawIdle 4s ease-in-out infinite; }
+@media (max-width:900px) { .catpaw-root{left:12px; bottom:12px;} .catpaw-bubble{font-size:13px; padding:8px 12px;} }
