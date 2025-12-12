@@ -1,75 +1,120 @@
-# React + TypeScript + Vite
+# QuizMate – Pixel-Perfect Quiz Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive quiz application built with **React + TypeScript**, designed to match the provided **Figma UI pixel-perfectly**, with smooth animations, accessibility compliance, and clean state management.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** https://quiz-app-frontend-assignment.vercel.app/  
+📦 **Repository:** https://github.com/Aditya1416/quiz-app-frontend-assignment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- 🎯 **Pixel-perfect UI** aligned precisely with the provided Figma design
+- 🎨 Smooth hover states and transitions
+- 🐾 Contextual **cat paw animation** for enhanced user engagement
+- 🔢 **Rolling score animation** on results screen
+- ♿ **WCAG 2.1 accessibility compliant**
+  - Keyboard navigation
+  - ARIA roles and labels
+  - Focus management
+- 🔁 Quiz retry, review answers, and home navigation
+- 📱 Fully responsive layout
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend:** React 18 + TypeScript
+- **Build Tool:** Vite
+- **Styling:** Custom CSS (no UI libraries)
+- **State Management:** React Hooks
+- **Deployment:** Vercel
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📂 Project Structure
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+frontend/
+├── src/
+│ ├── components/
+│ │ ├── CatPaw.tsx
+│ │ ├── RollingNumber.tsx
+│ │ └── Results.tsx
+│ ├── pages/
+│ │ ├── Start.tsx
+│ │ ├── Quiz.tsx
+│ │ └── Review.tsx
+│ ├── App.tsx
+│ ├── index.css
+│ └── main.tsx
+├── public/
+├── index.html
+├── package.json
+└── tsconfig.json
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ⚙️ Setup Instructions
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/Aditya1416/quiz-app-frontend-assignment.git
+cd quiz-app-frontend-assignment/frontend
+Install dependencies:
+npm install
+
+Run the development server:
+npm run dev
+
+Open your browser at:
+http://localhost:5173
+
+Build for production
+npm run build
+
+♿ Accessibility Considerations
+
+Semantic HTML structure
+
+ARIA attributes for screen readers
+
+Keyboard-only navigation supported
+
+Focus indicators preserved
+
+Live regions for dynamic score updates
+
+🧠 Assumptions Made
+
+Quiz data is static and client-side (as per assignment scope)
+
+Single-page application without routing libraries
+
+Custom CSS preferred over component frameworks to ensure pixel accuracy
+
+⏱️ Time Spent
+
+~10–12 hours, including:
+
+UI matching & styling
+
+Animation tuning
+
+Accessibility improvements
+
+Debugging TypeScript + deployment issues
+
+🚀 Deployment
+
+The application is deployed on Vercel and automatically redeploys on every push to the main branch.
+
+Live URL:https://quiz-app-frontend-assignment.vercel.app/
+
+👤 Author
+
+Aditya Sharma
+Frontend Developer
+GitHub: https://github.com/Aditya1416
+Student SRM Institute of Science and Technology,Kattankulanthur
+Reg no: RA2211026010295
