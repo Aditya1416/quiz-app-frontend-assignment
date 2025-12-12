@@ -1,4 +1,4 @@
-﻿import React from "react";
+﻿
 import RollingNumber from "./RollingNumber";
 import CatPaw from "./CatPaw";
 import type { Answer } from "../App";
@@ -31,7 +31,8 @@ export default function Results({ questions, answers, onRetry, onHome, onReview 
       </div>
 
       {/* cat paw bottom-left on results */}
-      <CatPaw message="Nice work!" autoWave={false} />
+      <CatPaw message="Nice work!" />
+
     </div>
   );
 }

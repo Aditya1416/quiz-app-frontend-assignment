@@ -1,4 +1,5 @@
-﻿import React, { KeyboardEvent } from "react";
+﻿import type { KeyboardEvent } from "react";
+
 
 type Props = { label: string; onClick: () => void; selected?: boolean; disabled?: boolean; id?: string };
 export default function OptionButton({ label, onClick, selected, disabled, id }: Props) {

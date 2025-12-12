@@ -1,4 +1,4 @@
-﻿import React from "react";
+﻿
 import OptionButton from "./OptionButton";
 
 type Q = { id:number; question:string; options:string[]; answerIndex?: number };

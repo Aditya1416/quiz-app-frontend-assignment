@@ -1,5 +1,4 @@
-﻿import React from "react";
-
+﻿
 type Props = { onStart: ()=>void };
 
 export default function Start({ onStart }: Props) {

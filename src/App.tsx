@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+﻿import { useState } from "react";
 import Start from "./pages/Start";
 import Quiz from "./pages/Quiz";
 import Results from "./pages/Results";

@@ -1,5 +1,4 @@
-﻿import React from "react";
-import type { Answer } from "../App";
+﻿import type { Answer } from "../App";
 
 type Q = { id:number; question:string; options:string[]; answer:number };
 
@@ -20,16 +19,26 @@ export default function Review({ questions, answers, onClose, onHome }: Props) {
             const a = answers.find(x=>x.qid===q.id);
             const sel = a?.selected;
             const correct = sel === q.answer;
+
             return (
               <div key={q.id} className="review-row" role="listitem" aria-label={`Question ${q.id}`}>
                 <div style={{ flex:"1 1 60%" }}>
                   <div style={{ fontWeight:700 }}>{q.question}</div>
                   <div style={{ color:"var(--muted-text)", marginTop:6 }}>
-                    Your Answer: <strong>{sel !== null ? q.options[sel] : "No answer"}</strong>
+                    Your Answer:{" "}
+                    <strong>
+                      {typeof sel === "number" ? q.options[sel] : "No answer"}
+                    </strong>
                   </div>
                 </div>
+
                 <div style={{ textAlign:"right" }}>
-                  <div style={{ color: correct ? "var(--correct)" : "var(--wrong)", fontWeight:800 }}>
+                  <div
+                    style={{
+                      color: correct ? "var(--correct)" : "var(--wrong)",
+                      fontWeight:800
+                    }}
+                  >
                     {correct ? "Correct" : "Incorrect"}
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-﻿import React from "react";
+﻿
 type Props = { current: number; total: number };
 export default function ProgressBar({ current, total }: Props) {
   const pct = Math.round((current / total) * 100);

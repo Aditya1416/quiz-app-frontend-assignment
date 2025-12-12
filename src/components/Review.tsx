@@ -1,4 +1,4 @@
-﻿import React from "react";
+﻿
 import type { Answer } from "../App";
 
 type Q = { id: number; question: string; options: string[]; answer: number };
