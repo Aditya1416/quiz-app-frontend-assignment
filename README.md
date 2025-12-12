@@ -1,120 +1,195 @@
-# QuizMate – Pixel-Perfect Quiz Application
+# QuizMate – Frontend Quiz Application
 
-A modern, interactive quiz application built with **React + TypeScript**, designed to match the provided **Figma UI pixel-perfectly**, with smooth animations, accessibility compliance, and clean state management.
+A pixel-perfect, accessible, and animated quiz application built as part of a frontend assignment.  
+The project focuses on UI accuracy, smooth interactions, keyboard accessibility, and clean React architecture.
 
-🔗 **Live Demo:** https://quiz-app-frontend-assignment.vercel.app/  
-📦 **Repository:** https://github.com/Aditya1416/quiz-app-frontend-assignment
+---
+
+## 🚀 Live Demo
+
+🔗 https://quiz-app-frontend-assignment.vercel.app/
+
+---
+
+## 🛠 Tech Stack
+
+- **Framework:** React + TypeScript  
+- **Build Tool:** Vite  
+- **Styling:** Custom CSS (no UI libraries used)  
+- **State Management:** React Hooks  
+- **Animations:** CSS & JavaScript  
+- **Deployment:** Vercel  
 
 ---
 
 ## ✨ Key Features
 
-- 🎯 **Pixel-perfect UI** aligned precisely with the provided Figma design
-- 🎨 Smooth hover states and transitions
-- 🐾 Contextual **cat paw animation** for enhanced user engagement
-- 🔢 **Rolling score animation** on results screen
-- ♿ **WCAG 2.1 accessibility compliant**
-  - Keyboard navigation
-  - ARIA roles and labels
-  - Focus management
-- 🔁 Quiz retry, review answers, and home navigation
-- 📱 Fully responsive layout
+- Pixel-perfect UI matching the provided Figma design  
+- Smooth quiz navigation with progress tracking  
+- Rolling score animation on results screen  
+- Animated cat paw encouragement element  
+- Fully keyboard-accessible (Enter / Arrow navigation)  
+- ARIA roles and live regions for screen readers  
+- Responsive layout across screen sizes  
 
 ---
 
-## 🛠️ Tech Stack
+## 📁 Project Structure
 
-- **Frontend:** React 18 + TypeScript
-- **Build Tool:** Vite
-- **Styling:** Custom CSS (no UI libraries)
-- **State Management:** React Hooks
-- **Deployment:** Vercel
-
----
-
-## 📂 Project Structure
-
-frontend/
-├── src/
-│ ├── components/
-│ │ ├── CatPaw.tsx
-│ │ ├── RollingNumber.tsx
-│ │ └── Results.tsx
-│ ├── pages/
-│ │ ├── Start.tsx
-│ │ ├── Quiz.tsx
-│ │ └── Review.tsx
-│ ├── App.tsx
-│ ├── index.css
-│ └── main.tsx
+```text
+quiz-app-frontend-assignment/
 ├── public/
-├── index.html
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── CatPaw.tsx
+│   │   ├── RollingNumber.tsx
+│   │   └── Results.tsx
+│   ├── pages/
+│   │   ├── Start.tsx
+│   │   ├── Quiz.tsx
+│   │   ├── Review.tsx
+│   │   └── Results.tsx
+│   ├── data/
+│   │   └── questions.ts
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+├── .gitignore
 ├── package.json
-└── tsconfig.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
 
+```
 
----
 
 ## ⚙️ Setup Instructions
 
-### 1. Clone the repository
+Follow the steps below to run the project locally.
+
+### 1️⃣ Clone the Repository
+
 ```bash
 git clone https://github.com/Aditya1416/quiz-app-frontend-assignment.git
-cd quiz-app-frontend-assignment/frontend
-Install dependencies:
+
+cd quiz-app-frontend-assignment
+
+2️⃣ Navigate to Frontend Directory:
+cd frontend
+
+3️⃣ Install Dependencies:
 npm install
 
-Run the development server:
+4️⃣ Start Development Server:
 npm run dev
 
-Open your browser at:
+5️⃣ Open in Browser:
 http://localhost:5173
 
-Build for production
+6️⃣ Build for Production (Optional):
 npm run build
+```
+---
 
-♿ Accessibility Considerations
+## ✅ Functional Requirements
 
-Semantic HTML structure
+The application fulfills all functional requirements outlined in the assignment:
 
-ARIA attributes for screen readers
+- Users can start the quiz from the landing screen
+- Questions are displayed **one at a time**
+- Each question supports **multiple-choice answers**
+- Users can navigate using **Next** and **Previous** controls
+- Quiz progress is visually indicated with a progress bar
+- Users can complete the quiz and view final results
+- Final score is displayed as a percentage
+- Users can retry the quiz or return to the home screen
+- Users can review all answers after quiz completion
 
-Keyboard-only navigation supported
+---
 
-Focus indicators preserved
+## 🎯 Key Features Implemented
 
-Live regions for dynamic score updates
+- Pixel-perfect UI aligned with the provided design
+- Smooth transitions and animations
+- Animated rolling score on results screen
+- Interactive “Cat Paw – Good Luck” visual element
+- Keyboard navigation support (Tab / Enter)
+- Fully responsive layout
+- Clean component-based architecture
+- Strong TypeScript typing across components
 
-🧠 Assumptions Made
+---
 
-Quiz data is static and client-side (as per assignment scope)
+## ♿ Accessibility Considerations
 
-Single-page application without routing libraries
+Accessibility was intentionally incorporated into the design:
 
-Custom CSS preferred over component frameworks to ensure pixel accuracy
+- Semantic HTML structure
+- ARIA roles and labels for screen readers
+- Keyboard-only navigation supported
+- Visible focus indicators preserved
+- Live regions for dynamic score updates
+- Buttons include accessible labels
 
-⏱️ Time Spent
+---
 
-~10–12 hours, including:
+## 📐 UI & Design Decisions
 
-UI matching & styling
+- Custom CSS used instead of UI libraries to ensure pixel accuracy
+- Consistent spacing, typography, and color system
+- Layout optimized for both desktop and smaller screens
+- Minimalistic and distraction-free user interface
 
-Animation tuning
+---
 
-Accessibility improvements
+## ⚙️ Technical Assumptions
 
-Debugging TypeScript + deployment issues
+- Quiz data is static and client-side (as per assignment scope)
+- Single-page application without routing libraries
+- No backend or database integration required
+- State managed locally using React Hooks
+- Assets are bundled with the frontend application
 
-🚀 Deployment
+---
 
-The application is deployed on Vercel and automatically redeploys on every push to the main branch.
+## ⏱️ Time Spent
 
-Live URL:https://quiz-app-frontend-assignment.vercel.app/
+Approximately **10–12 hours**, including:
 
-👤 Author
+- UI matching & styling
+- Component design and refactoring
+- Animation tuning
+- Accessibility improvements
+- TypeScript debugging
+- Deployment and build fixes
 
-Aditya Sharma
-Frontend Developer
-GitHub: https://github.com/Aditya1416
-Student SRM Institute of Science and Technology,Kattankulanthur
-Reg no: RA2211026010295
+---
+
+## 🚀 Deployment
+
+The application is deployed on **Vercel** and automatically redeploys on every push to the `main` branch.
+
+**Live Demo:**  
+https://quiz-app-frontend-assignment.vercel.app/
+
+---
+
+## 👤 Author
+
+**Aditya Sharma**  
+Frontend Developer  
+GitHub: https://github.com/Aditya1416 
+email: aditya161499@gmail.com
+SRM Institute of Science and Technology, Kattankulathur
+
+
+
+
+
+
+
+
+
+
